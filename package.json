@@ -1,0 +1,37 @@
+{
+  "name": "simple-webservice-api",
+  "version": "1.0.0",
+  "description": "simple webservice api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannsjohn2007/simple-webservice-api.git"
+  },
+  "keywords": [
+    "webservice",
+    "api",
+    "web",
+    "service"
+  ],
+  "author": "Max Villegas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hannsjohn2007/simple-webservice-api/issues"
+  },
+  "homepage": "https://github.com/hannsjohn2007/simple-webservice-api#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "econ-logger": "^1.0.1",
+    "express": "^4.16.2",
+    "multiparty": "latest",
+    "request": "^2.83.0",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.146.0"
+  }
+}
