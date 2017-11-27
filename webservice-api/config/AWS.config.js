@@ -3,6 +3,7 @@ module.exports.S3 = {
 };
 
 module.exports.Lambda = {
-    EncryptEndpoint: 'https://y7tmiaoy3l.execute-api.eu-west-1.amazonaws.com/devmax/encrypt',
-    DecryptEndpoint: 'https://y7tmiaoy3l.execute-api.eu-west-1.amazonaws.com/devmax/decrypt'
+    ROOT_ENDPOINT: 'https://mz20iyigvg.execute-api.eu-west-1.amazonaws.com/devmax/',
+    EncryptSuffix: 'encrypt',
+    DecryptSuffix: 'decrypt'
 };

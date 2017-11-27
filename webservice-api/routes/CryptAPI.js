@@ -8,15 +8,15 @@ const s3Uploader = require('../AWS-util/s3-uploader');
 const s3Downloader = require('../AWS-util/s3-downloader');
 const s3Deleter = require('../AWS-util/s3-deleter');
 const bucketName = require('../config/AWS.config').S3.bucketName;
-const ENCRYPT_ENDPOINT = require('../config/AWS.config').Lambda.EncryptEndpoint;
-const DECRYPT_ENDPOINT = require('../config/AWS.config').Lambda.DecryptEndpoint;
+const ROOT_ENDPOINT = require('../config/AWS.config').Lambda.ROOT_ENDPOINT;
+const ENCRYPT_SUFFIX = require('../config/AWS.config').Lambda.EncryptSuffix;
+const DECRYPT_SUFFIX = require('../config/AWS.config').Lambda.DecryptSuffix;
 
 class CryptAPI {
 
   constructor(router) {
     this.router = router;
     this._init();
-
   }
 
   _init(){
@@ -69,7 +69,7 @@ class CryptAPI {
     this._uploadAll(req)
       .then(formData => {
         logger.info("Encrypting");
-          this._handler(formData, ENCRYPT_ENDPOINT, res);
+          this._handler(formData, ROOT_ENDPOINT + ENCRYPT_SUFFIX, res);
       });
   }
 
@@ -77,7 +77,7 @@ class CryptAPI {
     this._uploadAll(req)
       .then(formData => {
         logger.info("Decrypting");
-        this._handler(formData, DECRYPT_ENDPOINT, res);
+        this._handler(formData, ROOT_ENDPOINT + DECRYPT_SUFFIX, res);
       });
   }
 
